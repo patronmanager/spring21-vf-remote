@@ -1,6 +1,7 @@
 {
   "orgName": "Spring '21 VF Remote bug",
   "edition": "Developer",
+  "release": "Preview",
   "features": ["Sites"],
   "settings": {
     "lightningExperienceSettings": {
