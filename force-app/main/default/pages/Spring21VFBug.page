@@ -1,0 +1,22 @@
+<apex:page controller="Spring21VFRemoteController">
+<script>
+    function vfGetServerTime() {
+ 
+        // This remoting call will use the page's timeout value
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.Spring21VFRemoteController.getServerTime}',
+            handleResult
+        );
+    }
+ 
+    function handleResult(result, event) { 
+        var timeDiv = document.getElementById('currentTime');
+		timeDiv.innerHTML = result;
+	}
+
+	setInterval(vfGetServerTime,5000);
+
+</script>
+<div>The current time is:</div>
+<div id="currentTime">waiting for update...</div>
+</apex:page>
