@@ -1,11 +1,12 @@
-<apex:page controller="Spring21VFRemoteController">
+<apex:page controller="Spring21VFRemoteController" showHeader="false" standardStylesheets="false">
 	<script>
 		function vfGetServerTime() {
 
 			// This remoting call will use the page's timeout value
 			Visualforce.remoting.Manager.invokeAction(
 				'{!$RemoteAction.Spring21VFRemoteController.getServerTime}',
-				handleResult
+				handleResult,
+				{buffer:false,escape:false}
 			);
 		}
 
